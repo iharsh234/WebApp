@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | AIMSQUANT </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet"> 
+    <link href="css/lightbox.css" rel="stylesheet"> 
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+
+     
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+
+<script type = "text/javascript">
+<script type="text/JavaScript">
+        function showMessage(){
+            var message = document.getElementById("message").value;
+            display_message.innerHTML= message;
+        }
+</script>
+
+
+
+<body>
+	<header id="header">      
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+                </div>
+             </div>
+        </div>
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.html">Home</a></li>
+                </div>
+            </div>
+    </header>
+    <!--/#header-->
+<script>
+function myFunction() {
+   document.write(document.getElementById("userInput1").value);
+   body.style.color = "red";
+   alert(document.getElementById("userInput1").value);
+}
+
+</script>
+
+<script>
+
+    function Click() {
+    var d1 = document.getElementById("userInput1").value;
+    var d2 = document.getElementById("userInput2").value;
+    var d0 =  document.getElementById("userInput").value;
+    var d11 = d1.split('/');
+    var d22 = d2.split('/');
+    d11 = [d11[2],d11[0],d11[1]];
+    d22 = [d22[2],d22[0],d22[1]];
+    url = "https://www.quandl.com/api/v3/datasets/NSE/"+d0+".json?api_key=gWf2CLShwrGUBVnqzsT4&start_date="+d11.join('-').slice(1,11)+"&end_date="+d22.join('-').slice(1,11);
+    window.open(url);
+}
+
+
+</script>
+
+
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                
+
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">QAPP</h1>
+                            <p></br></p>
+                            <p></br></p>
+                           <div class= 'row'>
+                            <!--button class="btn btn-submit" onClick="myFunction()"> OK </button-->
+                            <form name='form-mains' method="post">
+                                <div class="form-group" >
+                                <label >Specify a list of stock symbols on a form <b style="color:#FF0000">*</b></label>
+                                <input type="text" class="form-control" id = "userInput"  name='symbols'  placeholder="TATAMOTORS;ICICIBANK;VOLTAS;"  maxlength="255" value="" >
+                                </div>
+                                
+                                <div class="form-group">
+                                <label >start date <b style="color:#FF0000">*</b></label>
+                                <input type="date" name='start_data' id = "userInput1" class="form-control" >
+                                </div>
+
+
+                                <div class="form-group">
+                                <label >end date <b style="color:#FF0000">*</b></label>
+                                <input type="date" name='end_date' id = "userInput2" class="form-control">
+                                </div>
+                                <p></br></p>
+                                <div class="form-group">
+                                <input type="submit"  onClick="Click()"  name="StartAnalysis" class="btn btn-submit" value="Submit">
+                                
+                                </div>  
+                            </form>
+                            </div>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+
+    <section id="portfolio">
+        
+        
+    </section>
+    <!--/#portfolio-->
+    
+
+    
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+               
+                <div class="col-md-3 col-sm-6" style="float:right;">
+                    <div class="contact-info bottom">
+                        <h2>Contacts</h2>
+                        <address>
+                        E-mail: <a href="mailto:someone@example.com">iharsh234@gmail.com</a> <br> 
+                        Phone: +91  9999838696 <br>  
+                        </address>
+
+                        <h2>Address</h2>
+                        <address>
+                        House No., <br> 
+                        street No., <br> 
+                        City, State <br> 
+                        Country <br> 
+                        </address>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>   
+</body>
+</html>
