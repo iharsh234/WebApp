@@ -1,5 +1,6 @@
 # WebApp
 Assignment:
+
 Anand recently read a scientific paper where he learned about momentum
 investing. He learnt that stocks that go up in recent past would continue to go up in
 recent future. He learnt that a portfolio with such stocks does better than market on
@@ -33,9 +34,7 @@ with the parameters specified above.
 a. Make a query to external API (Quandl) to fetch data for stocks listed in
 text box in (1) between start and end dates. Below is the format for
 the API call:
-https://www.quandl.com/api/v3/datasets/NSE/SYMBOL.json?api_ke
-y=gWf2CLShwrGUBVnqzsT4&start_date=yyyy-mmdd&
-end_date=yyyy-mm-dd
+https://www.quandl.com/api/v3/datasets/NSE/SYMBOL.json?api_key=gWf2CLShwrGUBVnqzsT4&start_date=yyyy-mmdd&end_date=yyyy-mm-dd
 
 b. Learn about the output response by running the sample query in a
 browser:
