@@ -20,39 +20,18 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 
-
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="https://www.google.com/jsapi"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
-    /*
-            var d1 = $("#userInput1").val();
-            var d2 = $("#userInput2").val();
-            var d0 = $("#userInput").val();
-            var d11 = d1.split('/');
-            var d22 = d2.split('/');
-            d11 = [d11[2],d11[0],d11[1]];
-            d22 = [d22[2],d22[0],d22[1]];
-            var url = "https://www.quandl.com/api/v3/datasets/NSE/"+d0+".json?api_key=gWf2CLShwrGUBVnqzsT4&start_date="+d11.join('-').slice(1,11)+"&end_date="+d22.join('-').slice(1,11);
-            window.open(url);
-    */
     $(document).ready(function(){
-        //google.charts.load('current', {'packages':['corechart']});
-            //google.charts.setOnLoadCallback(drawChart);
         $("button").click(function (){
-            // load chart lib
             google.load('visualization', '1', {
               packages: ['corechart'] ,  "callback": drawChart
             });
-
-            // call drawChart once google charts is loaded
             google.setOnLoadCallback(drawChart);          
                 
-                
             function drawChart() {
-                  var public_key = 'dZ4EVmE8yGCRGx5XRX1W';
                   var d1 = $("#userInput1").val();
                   var d2 = $("#userInput2").val();
                   var d0 = $("#userInput").val();
@@ -61,11 +40,8 @@
                   d11 = [d11[2],d11[0],d11[1]];
                   d22 = [d22[2],d22[0],d22[1]];
                   var url = "https://www.quandl.com/api/v3/datasets/NSE/"+d0+".json?api_key=gWf2CLShwrGUBVnqzsT4&start_date="+d11.join('-').slice(1,11)+"&end_date="+d22.join('-').slice(1,11);
-                  //window.open(url);
-                  // JSONP request
-                  //var url='https://www.quandl.com/api/v3/datasets/NSE/TATAMOTORS.json?api_key=gWf2CLShwrGUBVnqzsT4&start_date=2010-10-01&end_date=2016-10-05';
                   var jsonData = $.ajax({
-                    url:  url,//'https://data.sparkfun.com/output/' + public_key + '.json',
+                    url:  url,
                     data: {page: 1},
                     dataType: 'json',
                   }).done(function (results) {
@@ -77,19 +53,15 @@
                     data.addColumn('number', 'low');//3
                     data.addColumn('number', 'high');//2
                     data.addColumn('number', 'Close');//5
-                    //data.addColumn('number', 'Total Trade Quantity');//6
-                    //data.addColumn('number', 'Turnover (Lacs)');//7
                     
                     $.each(results.dataset.data, function (i, row) {
-                      //alert(row[1]);
+                      
                       data.addRow([
                         (new Date(row[0])),
                         parseFloat(row[1]),
                         parseFloat(row[3]),
                         parseFloat(row[2]),
                         parseFloat(row[5])
-                        //parseFloat(row[6]),
-                        //parseFloat(row[7])
                       ]);
                     });
 
@@ -97,6 +69,7 @@
                   
                   var options = {
                       title: "Time statistics of " + d0,
+		      height:500,
                       explorer: { 
                           actions: ['dragToZoom', 'rightClickToReset'],
                           axis: 'horizontal',
@@ -170,31 +143,6 @@
     </header>
     <!--/#header-->
   
-<script>
-function myFunction() {
-   document.write(document.getElementById("userInput1").value);
-   body.style.color = "red";
-   alert(document.getElementById("userInput1").value);
-}
-
-</script>
-
-<script>
-    
-    function Click() {
-    var d1 = document.getElementById("userInput1").value;
-    var d2 = document.getElementById("userInput2").value;
-    var d0 =  document.getElementById("userInput").value;
-    var d11 = d1.split('/');
-    var d22 = d2.split('/');
-    d11 = [d11[2],d11[0],d11[1]];
-    d22 = [d22[2],d22[0],d22[1]];
-    var url = "https://www.quandl.com/api/v3/datasets/NSE/"+d0+".json?api_key=gWf2CLShwrGUBVnqzsT4&start_date="+d11.join('-').slice(1,11)+"&end_date="+d22.join('-').slice(1,11);
-    
-    window.open(url);
-    
-}
-
 
 </script>
 
@@ -244,9 +192,7 @@ function myFunction() {
     <!--/#action-->
 
     <section id="portfolio">
-        <!--button>Get JSON data</button>
-        <div id ='raja'> RESULT </div>
-        <div id="linechart_material" style="width: 900px; height: 500px"></div-->
+        
         <div id="chart" style="width: 100%; height : 200%"></div>
         
     </section>
