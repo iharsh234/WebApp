@@ -20,18 +20,45 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://www.google.com/jsapi"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+   
+    <script>
+            $( function() {
+                var cardRules = new Array();
+                $.get('NSE.txt', function(data){
+                                    cardRules = data.split('\n');
+                                    //alert(cardRules);
+                                    $( "#userInput" ).autocomplete({
+                                        source: cardRules,
+                                        autoFocus:true
+                                        });
+                                });
+                
+            });
+    </script>
+    
     <script type="text/javascript">
     $(document).ready(function(){
+        //google.charts.load('current', {'packages':['corechart']});
+            //google.charts.setOnLoadCallback(drawChart);  
         $("button").click(function (){
             google.load('visualization', '1', {
               packages: ['corechart'] ,  "callback": drawChart
             });
             google.setOnLoadCallback(drawChart);          
-                
+
             function drawChart() {
+                  var public_key = 'dZ4EVmE8yGCRGx5XRX1W';
                   var d1 = $("#userInput1").val();
                   var d2 = $("#userInput2").val();
                   var d0 = $("#userInput").val();
@@ -54,6 +81,7 @@
                     data.addColumn('number', 'high');//2
                     data.addColumn('number', 'Close');//5
                     
+                    
                     $.each(results.dataset.data, function (i, row) {
                       
                       data.addRow([
@@ -69,7 +97,8 @@
                   
                   var options = {
                       title: "Time statistics of " + d0,
-		      height:500,
+                      
+                      height:500,
                       explorer: { 
                           actions: ['dragToZoom', 'rightClickToReset'],
                           axis: 'horizontal',
@@ -77,8 +106,9 @@
                           maxZoomIn: 20.0
                           }
                       };
-                      
+                    
                     chart.draw(data, options);
+                    
 
                   });
 
@@ -90,23 +120,10 @@
 </script>
 
 
-</head><!--/head-->
-
-
-
-<script type = "text/javascript">
-<script type="text/JavaScript">
-        function showMessage(){
-            var message = document.getElementById("message").value;
-            display_message.innerHTML= message;
-        }
-</script>
-
-
+</head>
 
 <body>
-     
-   
+
    
 	<header id="header">      
         <div class="container">
@@ -144,6 +161,9 @@
     <!--/#header-->
   
 
+
+
+
 </script>
 
 
@@ -161,11 +181,11 @@
                            <div class= 'row'>
                             <!--button class="btn btn-submit" onClick="myFunction()"> OK </button-->
                             <form name='form-mains' method="post">
-                                <div class="form-group" >
-                                <label >Specify a list of stock symbols on a form <b style="color:#FF0000">*</b></label>
-                                <input type="text" class="form-control" id = "userInput"  name='symbols'  placeholder="TATAMOTORS;ICICIBANK;VOLTAS;"  maxlength="255" value="" >
+                                <div class="ui-widget">
+                                    
+                                    <label for = "userInput" >Specify any stock symbol <b style="color:#FF0000">*</b></label>
+                                    <input id="userInput"  class="form-control" placeholder="Enter Stock Symbol Initials  (NSE) ">
                                 </div>
-                                
                                 <div class="form-group">
                                 <label >start date <b style="color:#FF0000">*</b></label>
                                 <input type="date" name='start_data' id = "userInput1" class="form-control" >
@@ -192,11 +212,7 @@
     <!--/#action-->
 
     <section id="portfolio">
-        <!--button>Get JSON data</button>
-        <div id ='raja'> RESULT </div>
-        <div id="linechart_material" style="width: 900px; height: 500px"></div-->
         <div id="chart" style="width: 100%; height : 200%"></div>
-        
     </section>
     <!--/#portfolio-->
     
@@ -213,7 +229,7 @@
                     <div class="contact-info bottom">
                         <h2>Contacts</h2>
                         <address>
-                        E-mail: <a href="mailto:someone@example.com">iharsh234@gmail.com</a> <br> 
+                        E-mail: <a href="mailto:iharsh234e@gmail.com">iharsh234@gmail.com</a> <br> 
                         Phone: +91  9999838696 <br>  
                         </address>
 
@@ -232,7 +248,7 @@
     </footer>
     <!--/#footer-->
 
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <!--script type="text/javascript" src="js/jquery.js"></script-->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
