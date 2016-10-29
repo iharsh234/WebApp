@@ -49,13 +49,15 @@
     
   
     <script>
-        if ($.browser.mozilla){
-            alert('yoo');
-            $(function() {
-                    $( "#userInput1" ).datepicker();
-                    $( "#userInput2" ).datepicker();
-            });
-        }
+        
+           var isFirefox = typeof InstallTrigger !== 'undefined';
+           if (isFirefox){
+                $(function() {
+                            $( "#userInput1" ).datepicker();
+                            $( "#userInput2" ).datepicker();
+                    });
+            }
+        
     </script>
     
     
@@ -71,14 +73,18 @@
 
             function drawChart() {
                   var public_key = 'dZ4EVmE8yGCRGx5XRX1W';
+                  var isFirefox = typeof InstallTrigger !== 'undefined';
                   var d1 = $("#userInput1").val();
                   var d2 = $("#userInput2").val();
                   var d0 = $("#userInput").val();
+                  //alert(d1);alert(d2);
                   var d11 = d1.split('/');
                   var d22 = d2.split('/');
                   d11 = [d11[2],d11[0],d11[1]];
                   d22 = [d22[2],d22[0],d22[1]];
                   var url = "https://www.quandl.com/api/v3/datasets/NSE/"+d0+".json?api_key=gWf2CLShwrGUBVnqzsT4&start_date="+d11.join('-').slice(1,11)+"&end_date="+d22.join('-').slice(1,11);
+                  if (isFirefox) var url = "https://www.quandl.com/api/v3/datasets/NSE/"+d0+".json?api_key=gWf2CLShwrGUBVnqzsT4&start_date="+d11.join('-')+"&end_date="+d22.join('-');
+                  //window.open(url);
                   var jsonData = $.ajax({
                     url:  url,
                     data: {page: 1},
