@@ -1,6 +1,6 @@
 The Star And Thank Author License (SATA)
 
-Copyright (c) <Harsh Vijay> <iharsh234@gmail.com>
+Copyright (c) [Harsh Vijay](https://github.com/iharsh234) <iharsh234@gmail.com>
 
 Project Url: https://github.com/iharsh234/WebApp
 
