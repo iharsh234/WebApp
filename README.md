@@ -67,9 +67,10 @@ If you'd like to request a new functionality, feel free to do so by opening an i
 
 
 ## Todo
-- ### Adding BSE (India) Symbol to current App.
-- ###  Deciding Comparison models of Stocks. (suggestion are most welcome).
-- ###  Another WebApp  Doing Comparision between atleast 10 Stocks.
+- Adding BSE (India) Symbol to current App.
+- Deciding Comparison models of Stocks. (suggestion are most welcome).
+- Another WebApp  Doing Comparision between atleast 10 Stocks.
+
 ## Team
 
 [![Harsh Vijay](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://github.com/iharsh234)  | [![Quandl.com](https://d1vvuunsmk74y1.cloudfront.net/images/logo-9a3fb73c.png)](https://www.quandl.com/)
