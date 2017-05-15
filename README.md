@@ -73,7 +73,7 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ## Team
 
-[![Harsh Vijay](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://github.com/iharsh234)  | [![Quandl.com](https://d1vvuunsmk74y1.cloudfront.net/images/logo-9a3fb73c.png)](https://www.quandl.com/)
+[![Harsh Vijay](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://github.com/iharsh234)  | [![Quandl.com](https://github.com/iharsh234/WebApp/blob/master/images/quandl.jpg)](https://www.quandl.com/)
 ---|---
 [Harsh Vijay ](https://github.com/iharsh234) |[Quandl](https://www.quandl.com)
 
