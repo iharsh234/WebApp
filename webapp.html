@@ -34,7 +34,13 @@
    
     <script>
             $( function() {
+                //Extracts the selected symbol
+                // var Selected_symbol;
+                // $("#select_stock_symbol").mouseleave(function(){
+                // Selected_symbol=$('#select_stock_symbol').val();
+                //   });
                 var cardRules = new Array();
+                // $.get(Selected_symbol, function(data){
                 $.get('NSE.txt', function(data){
                                     cardRules = data.split('\n');
                                     //alert(cardRules);
@@ -225,6 +231,16 @@
                             <!--button class="btn btn-submit" onClick="myFunction()"> OK </button-->
                             <form name='form-mains' method="post">
                                 <div class="ui-widget">
+                                     <label for = "userInput">Select type stock symbol:</label><br>
+                                    <select class="form-control dropdown" id="select_stock_symbol" name="stock_symbol">
+                                      <option disabled selected value> -- select an option -- </option>
+                                      <option value="NSE.txt">
+                                        NSE
+                                      </option>
+                                      <option value="BSE.txt">
+                                        BSE
+                                      </option>
+                                    </select>
                                     
                                     <label for = "userInput" >Specify any stock symbol <b style="color:#FF0000">*</b></label>
                                     <input id="userInput"  class="form-control" placeholder="Enter Stock Symbol Initials  (NSE) ">
